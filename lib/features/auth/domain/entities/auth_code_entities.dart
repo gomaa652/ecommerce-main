@@ -7,7 +7,7 @@ class AuthCodeEntities {
 @HiveField(0)
   final bool? status;
 @HiveField(1)
-  final String messagee;
+  final dynamic messagee;
 @HiveField(2)
   final int? id;
 @HiveField(3)
@@ -19,7 +19,7 @@ class AuthCodeEntities {
 @HiveField(6)
   final String code;
 @HiveField(7)
-  final double? balance;
+  final int? balance;
 @HiveField(8)
   final String fcmToken;
 @HiveField(9)

@@ -1,6 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:yalla_client/core/utilities/configs/colors.dart';
+import 'package:yalla_client/features/auth/presentation/pages/code_number.dart';
+import 'package:yalla_client/features/auth/presentation/pages/sgin_in.dart';
 import 'package:yalla_client/features/nav/presentation/pages/nav_page.dart';
 import '../../../features/splash_screen.dart';
 import '../../../translations/locale_keys.g.dart';
@@ -14,6 +16,10 @@ class RouteGenerator {
         return _screenInit(const SplashScreen(), settings);
       case AppRoute.navPage:
         return _screenInit(const NavPage(), settings);
+        case AppRoute.sginInPhonePage:
+        return _screenInit(const SginIn(), settings);
+        case AppRoute.codeAuthPage:
+        return _screenInit(const CodeNumber(), settings);
       default:
         return _errorRoute();
     }

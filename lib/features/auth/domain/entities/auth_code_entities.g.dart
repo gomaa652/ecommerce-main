@@ -18,13 +18,13 @@ class AuthCodeEntitiesAdapter extends TypeAdapter<AuthCodeEntities> {
     };
     return AuthCodeEntities(
       status: fields[0] as bool?,
-      messagee: fields[1] as String,
+      messagee: fields[1] as dynamic,
       id: fields[2] as int?,
       name: fields[3] as String,
       email: fields[4] as String,
       phone: fields[5] as String,
       code: fields[6] as String,
-      balance: fields[7] as double?,
+      balance: fields[7] as int?,
       fcmToken: fields[8] as String,
       statusUser: fields[9] as String,
       token: fields[10] as String,

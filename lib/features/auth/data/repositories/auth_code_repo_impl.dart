@@ -25,6 +25,7 @@ class AuthCodeRepositoriesimpl extends AuthCodeRepositories {
           await codeRemoteDataSource.fetchFutureCodeNumper(codeNumper);
       return right(codeNumber);
     } catch (e) {
+      print(e);
       if (e is DioException) {
         return left(ServerFailure.fromDioError(e));
       } else {

@@ -13,12 +13,12 @@ import 'package:yalla_client/features/auth/data/repositories/auth_phone_repo_imp
 void setupSevicePhoneLocator() {
   getIt.registerSingleton<AuthPhoneRepoImpl>(AuthPhoneRepoImpl(
       phoneLocalDataSuorce: PhoneLocalDataSuorceImpl(),
-      phoneRemoteDataSuorce: PhoneRemoteDataSourceImpl(Api(Dio()))));
+      phoneRemoteDataSuorce: PhoneRemoteDataSourceImpl(Api())));
 }
 
 void setupServiceCodeLocator() {
   
   getIt.registerSingleton<AuthCodeRepositoriesimpl>(AuthCodeRepositoriesimpl(
       codeLocalDataSource: CodeLocalDataSourceImpl(),
-      codeRemoteDataSource: CodeRemoteDataSourceImpl(Api(Dio()))));
+      codeRemoteDataSource: CodeRemoteDataSourceImpl(Api())));
 }

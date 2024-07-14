@@ -4,7 +4,7 @@ class Data {
 	dynamic email;
 	String? phone;
 	dynamic code;
-	double? balance;
+	int? balance;
 	String? fcmToken;
 	String? status;
 	String? token;
@@ -27,7 +27,7 @@ class Data {
 				email: json['email'] as dynamic,
 				phone: json['phone'] as String?,
 				code: json['code'] as dynamic,
-				balance: json['balance'] as double?,
+				balance: json['balance'] as int?,
 				fcmToken: json['fcm_token'] as String?,
 				status: json['status'] as String?,
 				token: json['token'] as String?,

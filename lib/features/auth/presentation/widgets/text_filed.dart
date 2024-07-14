@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:yalla_client/features/auth/presentation/manger/cubit_phone/auth_phone_cubit.dart';
 
 class TextFormmFiled extends StatelessWidget {
-   const TextFormmFiled({
-    super.key,
-    required this.onFieldSubmitted,
-      required this.hintText});
+  const TextFormmFiled(
+      {super.key,
+      // required this.onFieldSubmitted,
+      required this.hintText,
+      required this.controller,
+      this.onChanged});
   final String hintText;
-  final Function(String)? onFieldSubmitted;
-
+  // final Function(String)? onFieldSubmitted;
+  final TextEditingController controller;
+  final Function(String)? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +26,9 @@ class TextFormmFiled extends StatelessWidget {
       ),
       width: double.infinity,
       height: 50,
-      child:  TextFormField(
-        onFieldSubmitted: onFieldSubmitted,
+      child: TextFormField(
+        onChanged: onChanged,
+        controller: controller,
         textAlign: TextAlign.right,
         keyboardType: TextInputType.number,
         decoration: InputDecoration(

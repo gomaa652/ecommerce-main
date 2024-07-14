@@ -12,9 +12,10 @@ class PhoneRemoteDataSourceImpl extends PhoneRemoteDataSuorce {
   PhoneRemoteDataSourceImpl(this.api);
   @override
   Future<AuthPhoneEntities> fetchFuturePhoneNumper(String phoneNumper) async {
-    var data = await api.geted(
-        endPoint: 'send-code?phone=$phoneNumper&fcm_token=12345grsgsreers');
+    var data =
+        await api.getedCodeUser(endPoint: 'send-code?phone=$phoneNumper&fcm_token=12345grsgsreers');
     print(data);
     return PhoneModel.fromJson(data);
   }
 }
+

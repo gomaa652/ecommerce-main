@@ -14,7 +14,7 @@ class CodeRemoteDataSourceImpl extends CodeRemoteDataSource {
   CodeRemoteDataSourceImpl(this.api);
   @override
   Future<AuthCodeEntities> fetchFutureCodeNumper(String codeNumper) async {
-    var data = await api.geted(
+    var data = await api.getedCodeUser(
         endPoint: 'check-code?phone=01115077582&code=$codeNumper');
     var box = Hive.box(kFeaturedDetilsUserBox);
     var dataFromJson = CodeModel.fromJson(data);

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:yalla_client/core/utilities/routes_navigator/app_routes.dart';
+import 'package:yalla_client/core/utilities/routes_navigator/navigator.dart';
 
 import '../widgets/intro_screen/intro_page_1.dart';
 import '../widgets/intro_screen/intro_page_2.dart';
 import '../widgets/intro_screen/intro_page_3.dart';
 import 'sgin_in.dart';
-
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -55,10 +56,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 GestureDetector(
                     onTap: () {
                       if (onLastPage) {
-                        Navigator.pushReplacement(context,
-                            MaterialPageRoute(builder: (context) {
-                          return const SginIn();
-                        }));
+                        pushNameReplacement(context, AppRoute.sginInPhonePage);
                       } else {
                         _controller.nextPage(
                             duration: const Duration(milliseconds: 500),
@@ -66,7 +64,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       }
                     },
                     child: Container(
-                      margin: EdgeInsets.only(right: 20),
+                      margin: const EdgeInsets.only(right: 20),
                       padding: const EdgeInsets.all(13),
                       decoration: BoxDecoration(
                           color: const Color.fromRGBO(217, 217, 217, 1),

@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:dio/dio.dart';
@@ -5,13 +7,22 @@ import 'package:dio/dio.dart';
 import '../utilities/static_data.dart';
 
 class Api {
-  final Dio _dio;
+
   final baseUrl = 'https://appaicsteel.com/Yalla/apiUser/';
-
-  Api(this._dio);
-
-  Future<Map<String, String>> geted({required String endPoint}) async {
-    var response = await _dio.get('$baseUrl$endPoint');
+  var dio = Dio();
+  Future<Map<String, dynamic>> getedCodeUser({required String endPoint}) async {
+    var headers = {
+      'Accept': 'application/json',
+      'lang': 'ar',
+      'Authorization': 'Bearer 896|YNPAN1GjZmdivT8bN3MARl2gAMV94N9iP7yv4AkZ'
+    };
+    var response = await dio.request(
+      '$baseUrl$endPoint',
+      options: Options(
+        method: 'GET',
+        headers: headers,
+      ),
+    );
     return response.data;
   }
 

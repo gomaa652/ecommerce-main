@@ -29,6 +29,7 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   another_flushbar: ^1.12.30
+  connectivity_plus: ^6.0.3
   cupertino_icons: ^1.0.6
   dartz: ^0.10.1
   dio: ^5.4.1
@@ -70,6 +71,7 @@ dev_dependencies:
   injectable_generator: ^2.1.5
   json_serializable: ^6.6.1
   retrofit_generator: ^8.1.0
+  very_good_analysis: ^6.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
